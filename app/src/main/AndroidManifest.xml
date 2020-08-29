@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudentKit">
-        <activity android:name=".ui.preferences.ProfileActivity"></activity>
+        <activity android:name=".ui.preferences.ProfileActivity" />
         <activity android:name=".ui.auth.SignInActivity" />
         <activity
             android:name=".ui.main.MainActivity"

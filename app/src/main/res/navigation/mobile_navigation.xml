@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_bursary">
+    app:startDestination="@+id/navigation_modules">
 
     <fragment
         android:id="@+id/navigation_bursary"
-        android:name="zw.co.guava.studentkit.ui.main.home.BursaryFragment"
+        android:name="zw.co.guava.studentkit.ui.main.bursary.BursaryFragment"
         android:label="@string/bursary"
         tools:layout="@layout/fragment_bursary">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/navigation_modules"
-        android:name="zw.co.guava.studentkit.ui.main.dashboard.ModulesFragment"
+        android:name="zw.co.guava.studentkit.ui.main.modules.ModulesFragment"
         android:label="@string/modules"
         tools:layout="@layout/fragment_modules">
         <action

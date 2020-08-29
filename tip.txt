@@ -1,0 +1,5 @@
+TO enable up on fragments
+
+
+((ActionBarActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+((ActionBarActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);

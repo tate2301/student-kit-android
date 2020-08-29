@@ -6,4 +6,7 @@
     <string name="modules">Modules</string>
     <string name="bursary">Bursary</string>
     <string name="transport">Transport</string>
+    <string name="title_activity_student_kit_compose">StudentKit</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
 </resources>
