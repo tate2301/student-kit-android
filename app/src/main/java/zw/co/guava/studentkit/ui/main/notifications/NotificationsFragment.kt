@@ -9,6 +9,7 @@ import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Divider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
@@ -31,32 +32,11 @@ class NotificationsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_notifications, container, false).apply {
             findViewById<ComposeView>(R.id.notificationsComposeView).setContent {
                 StudentKitTheme {
-                    ScrollableColumn {
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
+                    StudentKitTheme() {
+                        ScrollableColumn(modifier = Modifier.padding()) {
 
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
-
-                        NotificationCard(notification = StudentKitNotification(text="Hello there", time = 1093939404))
+                        }
                     }
-
                 }
             }
         }

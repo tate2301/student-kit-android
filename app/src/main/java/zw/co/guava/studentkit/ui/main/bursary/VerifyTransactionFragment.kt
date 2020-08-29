@@ -1,4 +1,4 @@
-package zw.co.guava.studentkit.ui.main.modules
+package zw.co.guava.studentkit.ui.main.bursary
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.ScrollableColumn
-import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
@@ -14,8 +13,8 @@ import zw.co.guava.studentkit.R
 import zw.co.guava.studentkit.ui.composeTheme.StudentKitTheme
 import zw.co.guava.studentkit.ui.main.MainActivity
 
-class CourseView : Fragment() {
 
+class VerifyTransactionFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,7 +24,7 @@ class CourseView : Fragment() {
         //requireActivity().actionBar!!.setDisplayHomeAsUpEnabled(true)
         //requireActivity().actionBar!!.setDisplayShowHomeEnabled(true)
 
-        (activity as MainActivity).supportActionBar?.title = "Course View"
+        (activity as MainActivity).supportActionBar?.title = "Confirm Transaction"
         (activity as MainActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -39,7 +38,4 @@ class CourseView : Fragment() {
             }
         }
     }
-
-
-
 }

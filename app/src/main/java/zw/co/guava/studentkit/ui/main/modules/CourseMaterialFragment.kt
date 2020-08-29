@@ -14,8 +14,7 @@ import zw.co.guava.studentkit.R
 import zw.co.guava.studentkit.ui.composeTheme.StudentKitTheme
 import zw.co.guava.studentkit.ui.main.MainActivity
 
-class CourseView : Fragment() {
-
+class CourseMaterialFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,7 +24,7 @@ class CourseView : Fragment() {
         //requireActivity().actionBar!!.setDisplayHomeAsUpEnabled(true)
         //requireActivity().actionBar!!.setDisplayShowHomeEnabled(true)
 
-        (activity as MainActivity).supportActionBar?.title = "Course View"
+        (activity as MainActivity).supportActionBar?.title = "Course Materials"
         (activity as MainActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -39,7 +38,4 @@ class CourseView : Fragment() {
             }
         }
     }
-
-
-
 }

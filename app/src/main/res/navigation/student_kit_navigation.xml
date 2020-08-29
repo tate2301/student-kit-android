@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_navigation_bursary_to_profileActivity"
             app:destination="@id/profileActivity" />
+        <action
+            android:id="@+id/action_navigation_bursary_to_internalTransferFragment"
+            app:destination="@id/internalTransferFragment" />
     </fragment>
 
     <fragment
@@ -26,6 +29,9 @@
         <action
             android:id="@+id/action_navigation_modules_to_courseView"
             app:destination="@id/courseView" />
+        <action
+            android:id="@+id/action_navigation_modules_to_timetableFragment"
+            app:destination="@id/timetableFragment" />
     </fragment>
 
     <fragment
@@ -61,5 +67,64 @@
         <action
             android:id="@+id/action_courseView_to_navigation_modules"
             app:destination="@id/navigation_modules" />
+        <action
+            android:id="@+id/action_courseView_to_courseMaterialFragment"
+            app:destination="@id/courseMaterialFragment" />
+        <action
+            android:id="@+id/action_courseView_to_assignmentsFragment"
+            app:destination="@id/assignmentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/assignmentViewFragment"
+        android:name="zw.co.guava.studentkit.ui.main.modules.AssignmentViewFragment"
+        android:label="AssignmentViewFragment" />
+    <fragment
+        android:id="@+id/assignmentsFragment"
+        android:name="zw.co.guava.studentkit.ui.main.modules.AssignmentsFragment"
+        android:label="AssignmentsFragment" >
+        <action
+            android:id="@+id/action_assignmentsFragment_to_assignmentViewFragment"
+            app:destination="@id/assignmentViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseMaterialFragment"
+        android:name="zw.co.guava.studentkit.ui.main.modules.CourseMaterialFragment"
+        android:label="CourseMaterialFragment" />
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="zw.co.guava.studentkit.ui.main.modules.TimetableFragment"
+        android:label="TimetableFragment" />
+    <fragment
+        android:id="@+id/internalTransferFragment"
+        android:name="zw.co.guava.studentkit.ui.main.bursary.InternalTransferFragment"
+        android:label="InternalTransferFragment" >
+        <action
+            android:id="@+id/action_internalTransferFragment_to_navigation_bursary"
+            app:destination="@id/navigation_bursary" />
+        <action
+            android:id="@+id/action_internalTransferFragment_to_navigation_bursary2"
+            app:destination="@id/navigation_bursary" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferSuccessFragment"
+        android:name="zw.co.guava.studentkit.ui.main.bursary.TransferSuccessFragment"
+        android:label="TransferSuccessFragment" >
+        <action
+            android:id="@+id/action_transferSuccessFragment_to_navigation_bursary"
+            app:destination="@id/navigation_bursary" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyTransactionFragment"
+        android:name="zw.co.guava.studentkit.ui.main.bursary.VerifyTransactionFragment"
+        android:label="VerifyTransactionFragment" >
+        <action
+            android:id="@+id/action_verifyTransactionFragment_to_navigation_bursary"
+            app:destination="@id/navigation_bursary" />
+        <action
+            android:id="@+id/action_verifyTransactionFragment_to_internalTransferFragment"
+            app:destination="@id/internalTransferFragment" />
+        <action
+            android:id="@+id/action_verifyTransactionFragment_to_transferSuccessFragment"
+            app:destination="@id/transferSuccessFragment" />
     </fragment>
 </navigation>

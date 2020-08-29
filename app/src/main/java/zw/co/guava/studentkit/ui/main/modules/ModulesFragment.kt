@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -29,13 +30,8 @@ class ModulesFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_modules, container, false).apply {
             findViewById<ComposeView>(R.id.modulesComposeView).setContent {
                 StudentKitTheme() {
-                    Column(modifier = Modifier.padding()) {
-                        Text(text = "ModulesView in Compose")
-                        Button(onClick = {
-                            findNavController().navigate(R.id.courseView)
-                        }) {
-                            Text("Courses")
-                        }
+                    ScrollableColumn(modifier = Modifier.padding()) {
+
                     }
                 }
             }
