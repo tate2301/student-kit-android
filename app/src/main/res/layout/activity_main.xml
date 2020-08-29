@@ -36,6 +36,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/student_kit_navigation" />
+        app:navGraph="@navigation/student_kit_navigation"
+        android:paddingBottom="80dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

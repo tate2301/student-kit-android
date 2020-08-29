@@ -43,6 +43,7 @@ class TransportFragment : Fragment() {
                             MyRoute(routeId = "1")
                             BusSchedules()
 
+                            Spacer(modifier = Modifier.padding(64.dp))
                         }
                     }
                 }

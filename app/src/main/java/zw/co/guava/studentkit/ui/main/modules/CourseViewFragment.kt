@@ -7,12 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.unit.dp
 import zw.co.guava.studentkit.R
 import zw.co.guava.studentkit.ui.composeTheme.StudentKitTheme
 import zw.co.guava.studentkit.ui.main.MainActivity
+import zw.co.guava.studentkit.ui.main.modules.components.CourseOptionsList
+import zw.co.guava.studentkit.ui.main.modules.components.CourseWorkView
 
 class CourseView : Fragment() {
 
@@ -32,8 +36,10 @@ class CourseView : Fragment() {
         return inflater.inflate(R.layout.fragment_course_view, container, false).apply {
             findViewById<ComposeView>(R.id.courseComposeView).setContent {
                 StudentKitTheme {
-                    ScrollableColumn(modifier = Modifier.padding()) {
-
+                    ScrollableColumn(modifier = Modifier.padding(top = 4.dp)) {
+                        CourseOptionsList()
+                        Spacer(modifier = Modifier.padding(8.dp))
+                        CourseWorkView()
                     }
                 }
             }

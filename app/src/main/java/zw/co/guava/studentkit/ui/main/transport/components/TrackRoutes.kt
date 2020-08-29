@@ -28,7 +28,7 @@ fun TrackRoutes(trackRoute: Boolean, setTrackRoute: (Boolean) -> Unit) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = "Get notifications when buses going along your route are about to leave campus or are about to get to your bus stop.",
-                    style = MaterialTheme.typography.body2
+                    style = MaterialTheme.typography.body1
                 )
             }
             Spacer(modifier = Modifier.padding(8.dp))
