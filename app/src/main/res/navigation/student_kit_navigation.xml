@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_navigation_modules_to_profileActivity"
             app:destination="@id/profileActivity" />
+        <action
+            android:id="@+id/action_navigation_modules_to_courseView"
+            app:destination="@id/courseView" />
     </fragment>
 
     <fragment
@@ -50,9 +53,13 @@
         android:name="zw.co.guava.studentkit.ui.preferences.ProfileActivity"
         android:label="activity_profile"
         tools:layout="@layout/activity_profile" />
-    <activity
-        android:id="@+id/signInActivity"
-        android:name="zw.co.guava.studentkit.ui.auth.SignInActivity"
-        android:label="activity_sign_in"
-        tools:layout="@layout/activity_sign_in" />
+    <fragment
+        android:id="@+id/courseView"
+        android:name="zw.co.guava.studentkit.ui.main.modules.CourseView"
+        android:label="Course"
+        tools:layout="@layout/fragment_course_view" >
+        <action
+            android:id="@+id/action_courseView_to_navigation_modules"
+            app:destination="@id/navigation_modules" />
+    </fragment>
 </navigation>
