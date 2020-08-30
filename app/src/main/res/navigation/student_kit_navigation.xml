@@ -63,7 +63,7 @@
         android:id="@+id/courseView"
         android:name="zw.co.guava.studentkit.ui.main.modules.CourseView"
         android:label="Course"
-        tools:layout="@layout/fragment_course_view" >
+        tools:layout="@layout/fragment_course_view">
         <action
             android:id="@+id/action_courseView_to_navigation_modules"
             app:destination="@id/navigation_modules" />
@@ -77,11 +77,11 @@
     <fragment
         android:id="@+id/assignmentViewFragment"
         android:name="zw.co.guava.studentkit.ui.main.modules.AssignmentViewFragment"
-        android:label="AssignmentViewFragment" />
+        android:label="Assignment" />
     <fragment
         android:id="@+id/assignmentsFragment"
         android:name="zw.co.guava.studentkit.ui.main.modules.AssignmentsFragment"
-        android:label="AssignmentsFragment" >
+        android:label="Assignments">
         <action
             android:id="@+id/action_assignmentsFragment_to_assignmentViewFragment"
             app:destination="@id/assignmentViewFragment" />
@@ -89,7 +89,7 @@
     <fragment
         android:id="@+id/courseMaterialFragment"
         android:name="zw.co.guava.studentkit.ui.main.modules.CourseMaterialFragment"
-        android:label="CourseMaterialFragment" />
+        android:label="Course Materials" />
     <fragment
         android:id="@+id/timetableFragment"
         android:name="zw.co.guava.studentkit.ui.main.modules.TimetableFragment"
@@ -97,7 +97,7 @@
     <fragment
         android:id="@+id/internalTransferFragment"
         android:name="zw.co.guava.studentkit.ui.main.bursary.InternalTransferFragment"
-        android:label="InternalTransferFragment" >
+        android:label="InternalTransferFragment">
         <action
             android:id="@+id/action_internalTransferFragment_to_navigation_bursary"
             app:destination="@id/navigation_bursary" />
@@ -108,7 +108,7 @@
     <fragment
         android:id="@+id/transferSuccessFragment"
         android:name="zw.co.guava.studentkit.ui.main.bursary.TransferSuccessFragment"
-        android:label="TransferSuccessFragment" >
+        android:label="TransferSuccessFragment">
         <action
             android:id="@+id/action_transferSuccessFragment_to_navigation_bursary"
             app:destination="@id/navigation_bursary" />
@@ -116,7 +116,7 @@
     <fragment
         android:id="@+id/verifyTransactionFragment"
         android:name="zw.co.guava.studentkit.ui.main.bursary.VerifyTransactionFragment"
-        android:label="VerifyTransactionFragment" >
+        android:label="VerifyTransactionFragment">
         <action
             android:id="@+id/action_verifyTransactionFragment_to_navigation_bursary"
             app:destination="@id/navigation_bursary" />

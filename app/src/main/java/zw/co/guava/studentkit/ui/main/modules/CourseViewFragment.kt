@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
+import androidx.navigation.findNavController
 import zw.co.guava.studentkit.R
 import zw.co.guava.studentkit.ui.composeTheme.StudentKitTheme
 import zw.co.guava.studentkit.ui.main.MainActivity
@@ -37,7 +38,7 @@ class CourseView : Fragment() {
             findViewById<ComposeView>(R.id.courseComposeView).setContent {
                 StudentKitTheme {
                     ScrollableColumn(modifier = Modifier.padding(top = 4.dp)) {
-                        CourseOptionsList()
+                        CourseOptionsList(findNavController())
                         Spacer(modifier = Modifier.padding(8.dp))
                         CourseWorkView()
                     }

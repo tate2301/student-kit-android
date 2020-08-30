@@ -4,10 +4,7 @@ import androidx.compose.foundation.Icon
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
-import androidx.compose.material.Card
-import androidx.compose.material.Divider
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.rounded.KeyboardArrowDown
@@ -21,23 +18,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import zw.co.guava.studentkit.ui.composeTheme.gray
+import zw.co.guava.studentkit.ui.composeTheme.lightText
+import zw.co.guava.studentkit.ui.composeTheme.text
 
 
 @Composable
 fun TripCard() {
 
     val (cardExpanded, setCardExpanded) = remember { mutableStateOf(false) }
-    val wayPoints = remember { listOf<RouteStops>(RouteStops(name = "Coldstream Hospital", time = 8883893), RouteStops(name = "PaRoma Bus Stop", time = 8883893)) }
-
+    val wayPoints = remember { mutableStateOf(listOf<RouteStops>(RouteStops(name = "Coldstream Hospital", time = 8883893), RouteStops(name = "PaRoma Bus Stop", time = 8883893))) }
     Column {
-        Spacer(modifier = Modifier.padding(4.dp))
 
-        Row (modifier = Modifier.padding(4.dp).fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween){
+        Row (modifier = Modifier.padding(horizontal = 4.dp).fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween){
                 Column(modifier = Modifier.gravity(Alignment.CenterVertically)) {
-                    Row {
-                        Text(text = "DEPARTING BUS", modifier = Modifier.padding(start=4.dp, end=4.dp), fontWeight = FontWeight(600), style = MaterialTheme.typography.body2)
-                        Text(text = "・", fontWeight = FontWeight(600))
-                        Text(text = "14:15", modifier = Modifier.padding(start=4.dp, end=4.dp), fontWeight = FontWeight(600))
+                    ProvideEmphasis(emphasis = EmphasisAmbient.current.medium) {
+                        Row {
+                            Text(text = "DEPARTING BUS", modifier = Modifier.padding(start=4.dp, end=4.dp), fontWeight = FontWeight(600), style = MaterialTheme.typography.body2)
+                            Text(text = "・", fontWeight = FontWeight(600))
+                            Text(text = "14:15", modifier = Modifier.padding(start=4.dp, end=4.dp), fontWeight = FontWeight(600), style = MaterialTheme.typography.body2)
+                        }
                     }
                 }
 
@@ -46,14 +46,14 @@ fun TripCard() {
                         false -> {
                             IconButton(
                                 onClick = {setCardExpanded(!cardExpanded)}) {
-                                Icon(asset = Icons.Rounded.KeyboardArrowDown)
+                                Icon(asset = Icons.Rounded.KeyboardArrowDown, tint = gray)
                             }
                         }
 
                         true -> {
                             IconButton(
                                 onClick = {setCardExpanded(!cardExpanded)}) {
-                                Icon(asset = Icons.Rounded.KeyboardArrowUp)
+                                Icon(asset = Icons.Rounded.KeyboardArrowUp, tint = gray)
                             }
                         }
                     }
@@ -67,7 +67,7 @@ fun TripCard() {
                 }
 
                 true -> {
-                    TripCardExpanded(wayPoints = wayPoints)
+                    TripCardExpanded(wayPoints = wayPoints.value)
                 }
             }
         }
@@ -89,9 +89,11 @@ fun TripCardDefault() {
         }
     }
     Row(modifier = Modifier.padding(horizontal = 16.dp,  vertical = 4.dp)) {
-        Text(text = "4 stops along the way")
-        Text(text = "・")
-        Text(text = "0 h 45 m ")
+        ProvideEmphasis(emphasis = EmphasisAmbient.current.medium) {
+            Text(text = "4 stops along the way")
+            Text(text = "・")
+            Text(text = "0 h 45 m ")
+        }
 
     }
 }
@@ -102,7 +104,7 @@ fun TripCardExpanded(wayPoints: List<RouteStops>) {
         Spacer(modifier = Modifier.padding(8.dp))
         Row(modifier = Modifier.padding(horizontal = 16.dp)) {
             Column() {
-                Icon(asset = Icons.Outlined.Info)
+                Icon(asset = Icons.Outlined.Info, tint = gray)
             }
             Spacer(modifier = Modifier.padding(8.dp))
             

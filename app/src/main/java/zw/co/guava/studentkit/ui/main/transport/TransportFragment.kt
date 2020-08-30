@@ -29,11 +29,9 @@ class TransportFragment : Fragment() {
     ): View? {
 
 
-
-        return inflater.inflate(R.layout.fragment_transport, container, false).apply {
-            findViewById<ComposeView>(R.id.transportComposeView).setContent {
+        return ComposeView(requireContext()).apply {
+            setContent {
                 val (trackRoute, setTrackRoute) = remember { mutableStateOf(false) }
-
 
                 StudentKitTheme() {
                     StudentKitTheme() {
@@ -49,6 +47,8 @@ class TransportFragment : Fragment() {
                 }
             }
         }
+
+
     }
 
 

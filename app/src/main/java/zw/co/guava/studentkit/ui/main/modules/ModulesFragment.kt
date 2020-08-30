@@ -8,20 +8,15 @@ import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.ScrollableRow
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.LazyRowFor
-import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import zw.co.guava.studentkit.R
 import zw.co.guava.studentkit.ui.composeTheme.StudentKitTheme
-import zw.co.guava.studentkit.ui.main.modules.components.CourseStudentKit
-import zw.co.guava.studentkit.ui.main.modules.components.RoundedCourseCard
+import zw.co.guava.studentkit.ui.main.modules.components.*
 
 class ModulesFragment : Fragment() {
 
@@ -33,24 +28,22 @@ class ModulesFragment : Fragment() {
     ): View? {
 
 
-
-        return inflater.inflate(R.layout.fragment_modules, container, false).apply {
-            findViewById<ComposeView>(R.id.modulesComposeView).setContent {
+        return ComposeView(requireContext()).apply {
+            setContent {
                 val courses = listOf<CourseStudentKit>(
-                    CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
-                    CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
-                    CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
-                    CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
-                    CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
+                        CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
+                        CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
+                        CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
+                        CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
+                        CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
                 )
-                
-                
+
                 StudentKitTheme() {
                     ScrollableColumn {
                         Spacer(modifier = Modifier.padding(8.dp))
                         ScrollableRow {
                             LazyRowFor(items = courses) {
-                                RoundedCourseCard(course = it)
+                                RoundedCourseCard(course = it, navController = findNavController())
                             }
                         }
 
@@ -62,35 +55,52 @@ class ModulesFragment : Fragment() {
                         }
 
                         Row {
-                           // Timetable Row
+                            // Timetable Row
                         }
 
                         Spacer(modifier = Modifier.padding(16.dp))
 
-                        Row(modifier = Modifier.padding(8.dp).fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text(text = "Library", style = MaterialTheme.typography.h1)
-
-                        }
-
-                        Row {
-                           // Library NavList
+                        Column() {
+                            Row(modifier = Modifier.padding(horizontal = 8.dp)) {
+                                Text(text = "Library", style = MaterialTheme.typography.h1)
+                            }
+                            Row {
+                                LibraryNavList(findNavController())
+                            }
                         }
 
                         Spacer(modifier = Modifier.padding(16.dp))
 
-                        Row(modifier = Modifier.padding(8.dp).fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text(text = "Virtual Classrooms", style = MaterialTheme.typography.h1)
+                        Column() {
+                            Row(modifier = Modifier.padding(horizontal = 8.dp)) {
+                                Text(text = "Virtual Classrooms", style = MaterialTheme.typography.h1)
 
-                        }
+                            }
 
-                        Row {
-                            // Virtual ClassRoom NavList
+                            Row {
+                                Column() {
+                                    VirtualClassroomCard(virtualClassRoomSnapShot = VirtualClassRoomSnapshot(
+                                            name = "Software Engineering",
+                                            title = "1.2 2020",
+                                            author = "Tatenda Chinyamakobvu"
+                                    ))
+
+                                    VirtualClassroomCard(virtualClassRoomSnapShot = VirtualClassRoomSnapshot(
+                                            name = "Software Engineering",
+                                            title = "1.2 2020",
+                                            author = "Tatenda Chinyamakobvu"
+                                    ))
+                                }
+                            }
                         }
+                        
+                        Spacer(modifier = Modifier.padding(32.dp))
 
 
                     }
                 }
             }
         }
+
     }
 }

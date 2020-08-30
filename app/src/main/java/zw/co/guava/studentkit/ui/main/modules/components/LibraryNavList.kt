@@ -4,10 +4,8 @@ import androidx.compose.foundation.Icon
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Card
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.ThumbUp
@@ -17,22 +15,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import zw.co.guava.studentkit.ui.composeTheme.text
-import zw.co.guava.studentkit.ui.main.Clickable
-import zw.co.guava.studentkit.R
 
 @Composable
-fun CourseOptionsList(navController: NavController) {
+fun LibraryNavList(navController: NavController) {
     Column {
         Column(modifier = Modifier.clickable(onClick = {
-            navController.navigate(R.id.courseMaterialFragment)
+
         })) {
             Spacer(modifier = Modifier.padding(8.dp))
             Row(horizontalArrangement = Arrangement.SpaceBetween) {
                 Column (modifier = Modifier.padding(horizontal = 8.dp)) {
-                    Icon(asset = Icons.Rounded.Email, tint = text)
+                    Icon(asset = Icons.Rounded.Email, tint = text, modifier = Modifier.width(20.dp).height(20.dp))
                 }
                 Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp).gravity(Alignment.CenterVertically)) {
-                    Text(text = "Course Materials")
+                    Text(text = "Catalog")
                 }
 
                 Column (modifier = Modifier.padding(horizontal = 4.dp)) {
@@ -45,15 +41,15 @@ fun CourseOptionsList(navController: NavController) {
 
         Column {
             Column(modifier = Modifier.clickable(onClick = {
-                navController.navigate(R.id.assignmentsFragment)
+
             })) {
                 Spacer(modifier = Modifier.padding(8.dp))
                 Row(horizontalArrangement = Arrangement.SpaceBetween) {
                     Column (modifier = Modifier.padding(horizontal = 8.dp)) {
-                        Icon(asset = Icons.Rounded.ThumbUp, tint = text)
+                        Icon(asset = Icons.Rounded.ThumbUp, tint = text, modifier = Modifier.width(20.dp).height(20.dp))
                     }
                     Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp).gravity(Alignment.CenterVertically)) {
-                        Text(text = "Assignments")
+                        Text(text = "Timetable")
                     }
 
                     Column (modifier = Modifier.padding(horizontal = 4.dp)) {
@@ -64,5 +60,6 @@ fun CourseOptionsList(navController: NavController) {
                 Divider()
             }
         }
+
     }
 }

@@ -8,11 +8,14 @@ import android.view.ViewGroup
 import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import zw.co.guava.studentkit.R
 import zw.co.guava.studentkit.ui.composeTheme.StudentKitTheme
 import zw.co.guava.studentkit.ui.main.MainActivity
+import zw.co.guava.studentkit.ui.main.modules.components.AssignmentCard
+import zw.co.guava.studentkit.ui.main.modules.components.AssignmentStudentKit
 
 class AssignmentsFragment : Fragment() {
     override fun onCreateView(
@@ -32,7 +35,18 @@ class AssignmentsFragment : Fragment() {
             findViewById<ComposeView>(R.id.courseComposeView).setContent {
                 StudentKitTheme {
                     ScrollableColumn(modifier = Modifier.padding()) {
+                        val assignment = remember { (AssignmentStudentKit(
+                                title = "Fidel's Rule",
+                                dateUploaded = 900000,
+                                deadline = 900000,
+                                isGroup = true,
+                                submitted = false,
+                                question = "Hello World"
+                        ))}
 
+                        AssignmentCard(assignment = assignment)
+                        AssignmentCard(assignment = assignment)
+                        AssignmentCard(assignment = assignment)
                     }
                 }
             }
