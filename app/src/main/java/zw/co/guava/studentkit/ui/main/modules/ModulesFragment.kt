@@ -20,15 +20,14 @@ import zw.co.guava.studentkit.ui.main.modules.components.*
 
 class ModulesFragment : Fragment() {
 
+    lateinit var view: ComposeView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-        return ComposeView(requireContext()).apply {
+        view = ComposeView(requireContext()).apply {
             setContent {
                 val courses = listOf<CourseStudentKit>(
                         CourseStudentKit(name = "Software Engineering", code = "CUIT123"),
@@ -93,7 +92,7 @@ class ModulesFragment : Fragment() {
                                 }
                             }
                         }
-                        
+
                         Spacer(modifier = Modifier.padding(32.dp))
 
 
@@ -101,6 +100,12 @@ class ModulesFragment : Fragment() {
                 }
             }
         }
+        return view
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
     }
 }

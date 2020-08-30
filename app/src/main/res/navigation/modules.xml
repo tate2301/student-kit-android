@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_modules"
+    app:startDestination="@id/fragment_modules">
+
+    <fragment
+        android:id="@+id/fragment_modules"
+        android:name="zw.co.guava.studentkit.ui.main.modules.ModulesFragment"
+        android:label="Modules"
+        tools:layout="@layout/fragment_modules">
+        <action
+            android:id="@+id/action_fragment_modules_to_courseView"
+            app:destination="@id/courseView" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/courseView"
+        android:name="zw.co.guava.studentkit.ui.main.modules.CourseView"
+        android:label="Course"
+        tools:layout="@layout/fragment_course_view" />
+</navigation>

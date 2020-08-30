@@ -24,7 +24,7 @@ import zw.co.guava.studentkit.R
 fun CourseOptionsList(navController: NavController) {
     Column {
         Column(modifier = Modifier.clickable(onClick = {
-            navController.navigate(R.id.courseMaterialFragment)
+            //navController.navigate(R.id.courseMaterialFragment)
         })) {
             Spacer(modifier = Modifier.padding(8.dp))
             Row(horizontalArrangement = Arrangement.SpaceBetween) {
@@ -45,7 +45,7 @@ fun CourseOptionsList(navController: NavController) {
 
         Column {
             Column(modifier = Modifier.clickable(onClick = {
-                navController.navigate(R.id.assignmentsFragment)
+                //navController.navigate(R.id.assignmentsFragment)
             })) {
                 Spacer(modifier = Modifier.padding(8.dp))
                 Row(horizontalArrangement = Arrangement.SpaceBetween) {

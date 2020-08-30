@@ -1,51 +1,76 @@
 package zw.co.guava.studentkit.ui.main
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.plusAssign
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import zw.co.guava.studentkit.R
 import zw.co.guava.studentkit.ui.preferences.ProfileActivity
+import java.util.Observer
 
 
 class MainActivity : AppCompatActivity() {
 
+    private var currentNavController: LiveData<NavController>? = null
+
+
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        if (savedInstanceState == null) {
+            setupBottomNavigationBar()
+        }
+    }
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+    private fun setupBottomNavigationBar() {
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
 
+        val navGraphIds = listOf(R.navigation.modules, R.navigation.bursary, R.navigation.transport, R.navigation.notifications)
 
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_modules,
-                R.id.navigation_bursary,
-                R.id.navigation_transport,
-                R.id.navigation_notifications
-            )
+        // Setup the bottom navigation view with a list of navigation graphs
+        val controller = bottomNavigationView.setupWithNavController(
+                navGraphIds = navGraphIds,
+                fragmentManager = supportFragmentManager,
+                containerId = R.id.nav_host_container,
+                intent = intent
         )
 
+        val appBarConfiguration = AppBarConfiguration(
+                setOf(
+                        R.id.navigation_modules,
+                        R.id.navigation_bursary,
+                        R.id.navigation_transport,
+                        R.id.navigation_notifications
+                )
+        )
 
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        // Whenever the selected controller changes, setup the action bar.
+        controller.observe(this,  {
+            setupActionBarWithNavController(it, appBarConfiguration)
+            setupActionBarWithNavController(it)
+        })
 
-        navView.setupWithNavController(navController)
+        currentNavController = controller
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
+        return currentNavController?.value?.navigateUp() ?: false
     }
+
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

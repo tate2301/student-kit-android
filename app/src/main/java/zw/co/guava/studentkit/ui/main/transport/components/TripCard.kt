@@ -34,9 +34,9 @@ fun TripCard() {
                 Column(modifier = Modifier.gravity(Alignment.CenterVertically)) {
                     ProvideEmphasis(emphasis = EmphasisAmbient.current.medium) {
                         Row {
-                            Text(text = "DEPARTING BUS", modifier = Modifier.padding(start=4.dp, end=4.dp), fontWeight = FontWeight(600), style = MaterialTheme.typography.body2)
+                            Text(text = "DEPARTING BUS", modifier = Modifier.padding(start=4.dp, end=4.dp), fontWeight = FontWeight(500), style = MaterialTheme.typography.body2)
                             Text(text = "・", fontWeight = FontWeight(600))
-                            Text(text = "14:15", modifier = Modifier.padding(start=4.dp, end=4.dp), fontWeight = FontWeight(600), style = MaterialTheme.typography.body2)
+                            Text(text = "14:15", modifier = Modifier.padding(start=4.dp, end=4.dp), fontWeight = FontWeight(500), style = MaterialTheme.typography.body2)
                         }
                     }
                 }
@@ -79,12 +79,12 @@ fun TripCard() {
 fun TripCardDefault() {
     Row (modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp).fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween){
         Column {
-            Text(text = "14:15", style = MaterialTheme.typography.h1, modifier = Modifier.padding(start=4.dp, end=4.dp), fontWeight = FontWeight(600))
+            Text(text = "14:15", style = MaterialTheme.typography.h1, modifier = Modifier.padding(start=4.dp, end=4.dp))
             Text(text = "Campus", style = MaterialTheme.typography.body2, textAlign = TextAlign.End)
         }
 
         Column {
-            Text(text = "15:00", style = MaterialTheme.typography.h1, textAlign = TextAlign.End, modifier = Modifier.padding(start=4.dp, end=4.dp).fillMaxWidth(), fontWeight = FontWeight(600))
+            Text(text = "15:00", style = MaterialTheme.typography.h1, textAlign = TextAlign.End, modifier = Modifier.padding(start=4.dp, end=4.dp).fillMaxWidth())
             Text(text = "Mzari", style = MaterialTheme.typography.body2, textAlign = TextAlign.End, modifier = Modifier.fillMaxWidth())
         }
     }

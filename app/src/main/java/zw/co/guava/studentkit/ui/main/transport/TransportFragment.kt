@@ -22,6 +22,8 @@ import zw.co.guava.studentkit.ui.main.transport.components.TrackRoutes
 
 class TransportFragment : Fragment() {
 
+    lateinit var view: ComposeView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +31,13 @@ class TransportFragment : Fragment() {
     ): View? {
 
 
-        return ComposeView(requireContext()).apply {
+        return view
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        view = ComposeView(requireContext()).apply {
             setContent {
                 val (trackRoute, setTrackRoute) = remember { mutableStateOf(false) }
 
@@ -47,7 +55,6 @@ class TransportFragment : Fragment() {
                 }
             }
         }
-
 
     }
 
