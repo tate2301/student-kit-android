@@ -12,9 +12,13 @@ import androidx.compose.material.icons.rounded.ThumbUp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import zw.co.guava.studentkit.ui.composeTheme.text
+import zw.co.guava.studentkit.R
+import zw.co.guava.studentkit.ui.composeTheme.lightText
 
 @Composable
 fun LibraryNavList(navController: NavController) {
@@ -25,7 +29,7 @@ fun LibraryNavList(navController: NavController) {
             Spacer(modifier = Modifier.padding(8.dp))
             Row(horizontalArrangement = Arrangement.SpaceBetween) {
                 Column (modifier = Modifier.padding(horizontal = 8.dp)) {
-                    Icon(asset = Icons.Rounded.Email, tint = text, modifier = Modifier.width(20.dp).height(20.dp))
+                    Icon(asset = vectorResource(id = R.drawable.ic_round_library_books_24), tint = lightText, modifier = Modifier.width(20.dp).height(20.dp))
                 }
                 Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp).gravity(Alignment.CenterVertically)) {
                     Text(text = "Catalog")
@@ -46,7 +50,7 @@ fun LibraryNavList(navController: NavController) {
                 Spacer(modifier = Modifier.padding(8.dp))
                 Row(horizontalArrangement = Arrangement.SpaceBetween) {
                     Column (modifier = Modifier.padding(horizontal = 8.dp)) {
-                        Icon(asset = Icons.Rounded.ThumbUp, tint = text, modifier = Modifier.width(20.dp).height(20.dp))
+                        Icon(asset = vectorResource(id = R.drawable.ic_round_schedule_24), tint = lightText, modifier = Modifier.width(20.dp).height(20.dp))
                     }
                     Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp).gravity(Alignment.CenterVertically)) {
                         Text(text = "Timetable")

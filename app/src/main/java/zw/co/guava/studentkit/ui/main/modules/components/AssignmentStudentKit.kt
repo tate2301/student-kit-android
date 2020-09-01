@@ -4,7 +4,7 @@ class AssignmentStudentKit (
         val title: String,
         val deadline: Long,
         val isGroup: Boolean,
-        val submitted: Boolean,
+        var submitted: Boolean,
         var dateSubmitted: Long? = null,
         val question: String,
         var attachments: List<String>? = null,

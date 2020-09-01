@@ -33,6 +33,11 @@ class NotificationsFragment : Fragment() {
             setContent {
                 StudentKitTheme() {
                     ScrollableColumn(modifier = Modifier.padding()) {
+                        val notification = StudentKitNotification(text = "Some new notification for you", time = 1039939093)
+
+                        NotificationCard(notification = notification)
+                        NotificationCard(notification = notification)
+                        NotificationCard(notification = notification)
 
                     }
                 }

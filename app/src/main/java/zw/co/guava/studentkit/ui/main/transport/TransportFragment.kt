@@ -30,13 +30,6 @@ class TransportFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
-        return view
-
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         view = ComposeView(requireContext()).apply {
             setContent {
                 val (trackRoute, setTrackRoute) = remember { mutableStateOf(false) }
@@ -55,6 +48,14 @@ class TransportFragment : Fragment() {
                 }
             }
         }
+
+        return view
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
 
     }
 

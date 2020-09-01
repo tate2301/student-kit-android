@@ -12,9 +12,15 @@ import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.imageFromResource
+import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.loadImageResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
+import zw.co.guava.studentkit.R
+import zw.co.guava.studentkit.ui.composeTheme.lightText
 
 @Composable
 fun CourseMaterialListItem() {
@@ -23,7 +29,7 @@ fun CourseMaterialListItem() {
         Column(modifier = Modifier.weight(1f)) {
             Row {
                 Column (modifier = Modifier.padding(4.dp).width(40.dp).gravity(Alignment.CenterVertically)) {
-                    Icon(asset = Icons.Rounded.Settings)
+                    Icon(asset = vectorResource(id = R.drawable.ic_round_insert_drive_file_24), tint = lightText)
                 }
 
                 Column (modifier = Modifier.padding(4.dp)){
@@ -36,7 +42,7 @@ fun CourseMaterialListItem() {
         }
 
         Column(modifier = Modifier.gravity(Alignment.CenterVertically)) {
-            Icon(asset = Icons.Rounded.Done)
+            Icon(asset = vectorResource(id = R.drawable.ic_round_cloud_download_24), tint = lightText)
 
         }
 

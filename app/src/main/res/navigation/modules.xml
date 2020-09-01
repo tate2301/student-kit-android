@@ -8,16 +8,44 @@
     <fragment
         android:id="@+id/fragment_modules"
         android:name="zw.co.guava.studentkit.ui.main.modules.ModulesFragment"
-        android:label="Modules"
-        tools:layout="@layout/fragment_modules">
+        android:label="Modules">
         <action
             android:id="@+id/action_fragment_modules_to_courseView"
             app:destination="@id/courseView" />
+        <action
+            android:id="@+id/action_fragment_modules_to_timetableFragment"
+            app:destination="@id/timetableFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/courseView"
         android:name="zw.co.guava.studentkit.ui.main.modules.CourseView"
-        android:label="Course"
-        tools:layout="@layout/fragment_course_view" />
+        android:label="Course" >
+        <action
+            android:id="@+id/action_courseView_to_courseMaterialFragment"
+            app:destination="@id/courseMaterialFragment" />
+        <action
+            android:id="@+id/action_courseView_to_assignmentsFragment"
+            app:destination="@id/assignmentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/assignmentViewFragment"
+        android:name="zw.co.guava.studentkit.ui.main.modules.AssignmentViewFragment"
+        android:label="Assignment" />
+    <fragment
+        android:id="@+id/assignmentsFragment"
+        android:name="zw.co.guava.studentkit.ui.main.modules.AssignmentsFragment"
+        android:label="Assignments">
+        <action
+            android:id="@+id/action_assignmentsFragment_to_assignmentViewFragment"
+            app:destination="@id/assignmentViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseMaterialFragment"
+        android:name="zw.co.guava.studentkit.ui.main.modules.CourseMaterialFragment"
+        android:label="Course Materials" />
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="zw.co.guava.studentkit.ui.main.modules.TimetableFragment"
+        android:label="Timetable" />
 </navigation>

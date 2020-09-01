@@ -10,9 +10,10 @@ import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
-import zw.co.guava.studentkit.R
+import androidx.navigation.findNavController
 import zw.co.guava.studentkit.ui.composeTheme.StudentKitTheme
 import zw.co.guava.studentkit.ui.main.MainActivity
+import zw.co.guava.studentkit.ui.main.bursary.components.InternalTransferCard
 
 
 class InternalTransferFragment : Fragment() {
@@ -34,7 +35,7 @@ class InternalTransferFragment : Fragment() {
             setContent {
                 StudentKitTheme() {
                     ScrollableColumn(modifier = Modifier.padding()) {
-
+                        InternalTransferCard(findNavController())
                     }
                 }
             }

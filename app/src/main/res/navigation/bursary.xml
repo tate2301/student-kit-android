@@ -9,5 +9,39 @@
         android:id="@+id/bursaryFragment"
         android:name="zw.co.guava.studentkit.ui.main.bursary.BursaryFragment"
         android:label="Bursary"
-        tools:layout="@layout/fragment_bursary" />
+        tools:layout="@layout/fragment_bursary" >
+        <action
+            android:id="@+id/action_bursaryFragment_to_internalTransferFragment"
+            app:destination="@id/internalTransferFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/internalTransferFragment"
+        android:name="zw.co.guava.studentkit.ui.main.bursary.InternalTransferFragment"
+        android:label="Internal Transfer">
+        <action
+            android:id="@+id/action_internalTransferFragment_to_verifyTransactionFragment"
+            app:destination="@id/verifyTransactionFragment" />
+        <action
+            android:id="@+id/action_internalTransferFragment_to_bursaryFragment"
+            app:destination="@id/bursaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyTransactionFragment"
+        android:name="zw.co.guava.studentkit.ui.main.bursary.VerifyTransactionFragment"
+        android:label="Verify Transaction">
+        <action
+            android:id="@+id/action_verifyTransactionFragment_to_transferSuccessFragment"
+            app:destination="@id/transferSuccessFragment" />
+        <action
+            android:id="@+id/action_verifyTransactionFragment_to_internalTransferFragment"
+            app:destination="@id/internalTransferFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferSuccessFragment"
+        android:name="zw.co.guava.studentkit.ui.main.bursary.TransferSuccessFragment"
+        android:label="Transfer Success">
+        <action
+            android:id="@+id/action_transferSuccessFragment_to_bursaryFragment"
+            app:destination="@id/bursaryFragment" />
+    </fragment>
 </navigation>

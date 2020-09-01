@@ -31,7 +31,7 @@ fun BusSchedules() {
 @Composable
 fun DepartingBuses() {
     Column() {
-        Text(text = "Departing Buses", fontWeight = FontWeight(600), style = MaterialTheme.typography.h1)
+        Text(text = "Departing Buses", fontWeight = FontWeight(600), style = MaterialTheme.typography.h6)
         Spacer(modifier = Modifier.padding(8.dp))
         Card(border = BorderStroke(width = 1.dp, SolidColor(gray)), elevation = 0.dp) {
             Column {
@@ -45,7 +45,7 @@ fun DepartingBuses() {
 @Composable
 fun ReturningBuses() {
     Column() {
-        Text(text = "Returning Buses", fontWeight = FontWeight(600), style = MaterialTheme.typography.h1)
+        Text(text = "Returning Buses", fontWeight = FontWeight(600), style = MaterialTheme.typography.h6)
         Spacer(modifier = Modifier.padding(8.dp))
         Card(border = BorderStroke(width = 1.dp, SolidColor(gray)), elevation = 0.dp) {
             Column {

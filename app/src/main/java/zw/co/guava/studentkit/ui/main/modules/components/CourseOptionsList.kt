@@ -14,22 +14,24 @@ import androidx.compose.material.icons.rounded.ThumbUp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import zw.co.guava.studentkit.ui.composeTheme.text
 import zw.co.guava.studentkit.ui.main.Clickable
 import zw.co.guava.studentkit.R
+import zw.co.guava.studentkit.ui.composeTheme.lightText
 
 @Composable
 fun CourseOptionsList(navController: NavController) {
     Column {
         Column(modifier = Modifier.clickable(onClick = {
-            //navController.navigate(R.id.courseMaterialFragment)
+            navController.navigate(R.id.courseMaterialFragment)
         })) {
             Spacer(modifier = Modifier.padding(8.dp))
             Row(horizontalArrangement = Arrangement.SpaceBetween) {
                 Column (modifier = Modifier.padding(horizontal = 8.dp)) {
-                    Icon(asset = Icons.Rounded.Email, tint = text)
+                    Icon(asset = vectorResource(id = R.drawable.ic_round_library_books_24), tint = lightText)
                 }
                 Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp).gravity(Alignment.CenterVertically)) {
                     Text(text = "Course Materials")
@@ -45,12 +47,12 @@ fun CourseOptionsList(navController: NavController) {
 
         Column {
             Column(modifier = Modifier.clickable(onClick = {
-                //navController.navigate(R.id.assignmentsFragment)
+                navController.navigate(R.id.assignmentsFragment)
             })) {
                 Spacer(modifier = Modifier.padding(8.dp))
                 Row(horizontalArrangement = Arrangement.SpaceBetween) {
                     Column (modifier = Modifier.padding(horizontal = 8.dp)) {
-                        Icon(asset = Icons.Rounded.ThumbUp, tint = text)
+                        Icon(asset = vectorResource(id = R.drawable.ic_round_grading_24), tint = lightText)
                     }
                     Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp).gravity(Alignment.CenterVertically)) {
                         Text(text = "Assignments")

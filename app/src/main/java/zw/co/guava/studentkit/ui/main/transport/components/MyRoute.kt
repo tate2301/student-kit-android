@@ -55,7 +55,7 @@ fun MyRoute(routeId: String) {
 fun MyRouteTopBar(myRouteExpanded: Boolean, setMyRouteExpanded: (Boolean) -> Unit) {
     Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
         Column(modifier = Modifier.gravity(Alignment.CenterVertically)) {
-            Text(text = "My Route", style = MaterialTheme.typography.h1)
+            Text(text = "My Route", style = MaterialTheme.typography.h6)
         }
         when (myRouteExpanded) {
             false -> {
