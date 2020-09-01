@@ -29,13 +29,11 @@ class NotificationsFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_notifications, container, false).apply {
-            findViewById<ComposeView>(R.id.notificationsComposeView).setContent {
-                StudentKitTheme {
-                    StudentKitTheme() {
-                        ScrollableColumn(modifier = Modifier.padding()) {
+        return ComposeView(requireContext()).apply {
+            setContent {
+                StudentKitTheme() {
+                    ScrollableColumn(modifier = Modifier.padding()) {
 
-                        }
                     }
                 }
             }

@@ -30,9 +30,9 @@ class InternalTransferFragment : Fragment() {
         (activity as MainActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        return inflater.inflate(R.layout.fragment_course_view, container, false).apply {
-            findViewById<ComposeView>(R.id.courseComposeView).setContent {
-                StudentKitTheme {
+        return ComposeView(requireContext()).apply {
+            setContent {
+                StudentKitTheme() {
                     ScrollableColumn(modifier = Modifier.padding()) {
 
                     }

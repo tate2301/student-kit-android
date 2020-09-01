@@ -34,10 +34,11 @@ class CourseView : Fragment() {
         (activity as MainActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        return inflater.inflate(R.layout.fragment_course_view, container, false).apply {
-            findViewById<ComposeView>(R.id.courseComposeView).setContent {
-                StudentKitTheme {
-                    ScrollableColumn(modifier = Modifier.padding(top = 4.dp)) {
+
+        return ComposeView(requireContext()).apply {
+            setContent {
+                StudentKitTheme() {
+                    ScrollableColumn(modifier = Modifier.padding()) {
                         CourseOptionsList(findNavController())
                         Spacer(modifier = Modifier.padding(8.dp))
                         CourseWorkView()

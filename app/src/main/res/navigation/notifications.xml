@@ -8,6 +8,5 @@
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="zw.co.guava.studentkit.ui.main.notifications.NotificationsFragment"
-        android:label="Notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:label="Notifications" />
 </navigation>

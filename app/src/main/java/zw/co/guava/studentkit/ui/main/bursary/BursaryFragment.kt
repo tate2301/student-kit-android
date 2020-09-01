@@ -23,13 +23,11 @@ class BursaryFragment : Fragment() {
     ): View? {
 
 
-        return inflater.inflate(R.layout.fragment_bursary, container, false).apply { 
-            findViewById<ComposeView>(R.id.bursaryComposeView).setContent { 
+        return ComposeView(requireContext()).apply {
+            setContent {
                 StudentKitTheme() {
-                    StudentKitTheme() {
-                        ScrollableColumn(modifier = Modifier.padding()) {
+                    ScrollableColumn(modifier = Modifier.padding()) {
 
-                        }
                     }
                 }
             }
